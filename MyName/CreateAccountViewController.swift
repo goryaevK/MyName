@@ -122,12 +122,13 @@ class CreateAccountViewController: UIViewController {
     
     
     @objc func buttonPressed() {
-        let viewcontroller = LoginViewController(model: UserPhoneModel(phone: uitextfield.text ?? ""))
+        let text = uitextfield.text ?? ""
+        UserDefaults.standard.set(text, forKey: "savedTextFieldText")
+        let viewcontroller = LoginViewController()
         viewcontroller.view.backgroundColor = .white
         self.navigationController?.pushViewController(viewcontroller, animated: true)
         print("Кнопка была нажата!")
-        let text = uitextfield.text ?? ""
-        UserDefaults.standard.set(text, forKey: "savedTextFieldText")
+        
     }
 
  

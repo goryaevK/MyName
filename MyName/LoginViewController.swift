@@ -16,25 +16,18 @@ class LoginViewController: UIViewController {
     let label2 = UILabel()
     let screenWidth = UIScreen.main.bounds.width-10
     
-    init (model: UserPhoneModel) {
-        super.init(nibName: nil, bundle: nil)
-        uitextfield.text = model.phone
-    }
-        
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         if let savedText = UserDefaults.standard.string(forKey: "savedTextFieldText") {
-                label.text = savedText
-                print("Извлеченный текст: \(savedText)")
-            } else {
-                label.text = "Нет сохраненного текста"
-            }
+            uitextfield.text = savedText
+            print("Извлеченный текст: \(savedText)")
+        } else {
+            uitextfield.text = "Нет сохраненного текста"
+        }
     }
     
     func setupUI() {

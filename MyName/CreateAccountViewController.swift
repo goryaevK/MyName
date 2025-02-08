@@ -16,6 +16,7 @@ class CreateAccountViewController: UIViewController {
     let label2 = UILabel()
     let screenWidth = UIScreen.main.bounds.width-10
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -125,6 +126,8 @@ class CreateAccountViewController: UIViewController {
         viewcontroller.view.backgroundColor = .white
         self.navigationController?.pushViewController(viewcontroller, animated: true)
         print("Кнопка была нажата!")
+        let text = uitextfield.text ?? ""
+        UserDefaults.standard.set(text, forKey: "savedTextFieldText")
     }
 
  

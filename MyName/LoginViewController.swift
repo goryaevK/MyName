@@ -27,8 +27,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
-    
+        if let savedText = UserDefaults.standard.string(forKey: "savedTextFieldText") {
+                label.text = savedText
+                print("Извлеченный текст: \(savedText)")
+            } else {
+                label.text = "Нет сохраненного текста"
+            }
     }
     
     func setupUI() {

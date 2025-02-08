@@ -8,6 +8,9 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    private enum Constants {
+    static let savedTextFieldTextKey = "savedTextFieldText"
+    }
     
     let stackView = UIStackView()
     let label = UILabel()
@@ -16,19 +19,18 @@ class LoginViewController: UIViewController {
     let label2 = UILabel()
     let screenWidth = UIScreen.main.bounds.width-10
     
-    init (model: UserPhoneModel) {
-        super.init(nibName: nil, bundle: nil)
-        uitextfield.text = model.phone
-    }
-        
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
-    
+        if let savedText = UserDefaults.standard.string(forKey: Constants.savedTextFieldTextKey) {
+            uitextfield.text = savedText
+            print("Извлеченный текст: \(savedText)")
+        } else {
+            uitextfield.text = "Нет сохраненного текста"
+        }
     }
     
     func setupUI() {
@@ -81,8 +83,7 @@ class LoginViewController: UIViewController {
     }
 
     func setupTextField() {
-        //uitextfield.text = "Введите пароль "
-        //uitextfield.placeholder = "    "
+        
         uitextfield.font = UIFont.systemFont(ofSize: 14)
         uitextfield.textColor = .black
         uitextfield.textAlignment = .center
@@ -118,7 +119,7 @@ class LoginViewController: UIViewController {
     
     
     @objc func buttonPressed() {
-        print("Кнопка была нажата!")
+        
     }
 
         

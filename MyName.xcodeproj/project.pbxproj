@@ -6,30 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		08A38A1B2D55416E000EF4AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A112D55416E000EF4AC /* AppDelegate.swift */; };
+		08A38A1C2D55416E000EF4AC /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A132D55416E000EF4AC /* CreateAccountViewController.swift */; };
+		08A38A1D2D55416E000EF4AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A172D55416E000EF4AC /* LoginViewController.swift */; };
+		08A38A1E2D55416E000EF4AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A182D55416E000EF4AC /* SceneDelegate.swift */; };
+		08A38A1F2D55416E000EF4AC /* UserPhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A192D55416E000EF4AC /* UserPhoneModel.swift */; };
+		08A38A202D55416E000EF4AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08A38A122D55416E000EF4AC /* Assets.xcassets */; };
+		08A38A222D55416E000EF4AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08A38A162D55416E000EF4AC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		08A38A112D55416E000EF4AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		08A38A122D55416E000EF4AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		08A38A132D55416E000EF4AC /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		08A38A142D55416E000EF4AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08A38A152D55416E000EF4AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		08A38A172D55416E000EF4AC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		08A38A182D55416E000EF4AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		08A38A192D55416E000EF4AC /* UserPhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoneModel.swift; sourceTree = "<group>"; };
 		08D9BADD2D49603D00E5C415 /* MyName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		08D9BAEF2D49603E00E5C415 /* Exceptions for "MyName" folder in "MyName" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 08D9BADC2D49603D00E5C415 /* MyName */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		08D9BADF2D49603D00E5C415 /* MyName */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				08D9BAEF2D49603E00E5C415 /* Exceptions for "MyName" folder in "MyName" target */,
-			);
-			path = MyName;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		08D9BADA2D49603D00E5C415 /* Frameworks */ = {
@@ -42,10 +39,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08A38A1A2D55416E000EF4AC /* MyName */ = {
+			isa = PBXGroup;
+			children = (
+				08A38A112D55416E000EF4AC /* AppDelegate.swift */,
+				08A38A122D55416E000EF4AC /* Assets.xcassets */,
+				08A38A132D55416E000EF4AC /* CreateAccountViewController.swift */,
+				08A38A142D55416E000EF4AC /* Info.plist */,
+				08A38A162D55416E000EF4AC /* LaunchScreen.storyboard */,
+				08A38A172D55416E000EF4AC /* LoginViewController.swift */,
+				08A38A182D55416E000EF4AC /* SceneDelegate.swift */,
+				08A38A192D55416E000EF4AC /* UserPhoneModel.swift */,
+			);
+			path = MyName;
+			sourceTree = "<group>";
+		};
 		08D9BAD42D49603D00E5C415 = {
 			isa = PBXGroup;
 			children = (
-				08D9BADF2D49603D00E5C415 /* MyName */,
+				08A38A1A2D55416E000EF4AC /* MyName */,
 				08D9BADE2D49603D00E5C415 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,9 +84,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				08D9BADF2D49603D00E5C415 /* MyName */,
 			);
 			name = MyName;
 			packageProductDependencies = (
@@ -122,6 +131,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A38A202D55416E000EF4AC /* Assets.xcassets in Resources */,
+				08A38A222D55416E000EF4AC /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +143,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08A38A1B2D55416E000EF4AC /* AppDelegate.swift in Sources */,
+				08A38A1C2D55416E000EF4AC /* CreateAccountViewController.swift in Sources */,
+				08A38A1D2D55416E000EF4AC /* LoginViewController.swift in Sources */,
+				08A38A1E2D55416E000EF4AC /* SceneDelegate.swift in Sources */,
+				08A38A1F2D55416E000EF4AC /* UserPhoneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		08A38A162D55416E000EF4AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08A38A152D55416E000EF4AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		08D9BAF12D49603E00E5C415 /* Debug */ = {

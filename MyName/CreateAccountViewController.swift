@@ -8,6 +8,10 @@
 import UIKit
 
 class CreateAccountViewController: UIViewController {
+    private enum Constants {
+    static let savedTextFieldTextKey = "savedTextFieldText"
+    }
+    
     let stackView = UIStackView()
     let label = UILabel()
     let segment = UISegmentedControl(items: ["Телефон","Почта"])
@@ -15,6 +19,7 @@ class CreateAccountViewController: UIViewController {
     let button = UIButton(type: .system)
     let label2 = UILabel()
     let screenWidth = UIScreen.main.bounds.width-10
+    
     
     override func viewDidLoad() {
         
@@ -121,10 +126,13 @@ class CreateAccountViewController: UIViewController {
     
     
     @objc func buttonPressed() {
-        let viewcontroller = LoginViewController(model: UserPhoneModel(phone: uitextfield.text ?? ""))
+        let text = uitextfield.text ?? ""
+        UserDefaults.standard.set(text, forKey: Constants.savedTextFieldTextKey)
+        let viewcontroller = LoginViewController()
         viewcontroller.view.backgroundColor = .white
         self.navigationController?.pushViewController(viewcontroller, animated: true)
-        print("Кнопка была нажата!")
+        
+        
     }
 
  

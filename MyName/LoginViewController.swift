@@ -8,6 +8,9 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    private enum Constants {
+    static let savedTextFieldTextKey = "savedTextFieldText"
+    }
     
     let stackView = UIStackView()
     let label = UILabel()
@@ -22,7 +25,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        if let savedText = UserDefaults.standard.string(forKey: "savedTextFieldText") {
+        if let savedText = UserDefaults.standard.string(forKey: Constants.savedTextFieldTextKey) {
             uitextfield.text = savedText
             print("Извлеченный текст: \(savedText)")
         } else {
@@ -80,8 +83,7 @@ class LoginViewController: UIViewController {
     }
 
     func setupTextField() {
-        //uitextfield.text = "Введите пароль "
-        //uitextfield.placeholder = "    "
+        
         uitextfield.font = UIFont.systemFont(ofSize: 14)
         uitextfield.textColor = .black
         uitextfield.textAlignment = .center
@@ -117,7 +119,7 @@ class LoginViewController: UIViewController {
     
     
     @objc func buttonPressed() {
-        print("Кнопка была нажата!")
+        
     }
 
         

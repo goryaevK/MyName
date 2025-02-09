@@ -16,7 +16,8 @@ class CreateAccountViewController: UIViewController {
     let custlabel = CustomLabel()
     let segment = UISegmentedControl(items: ["Телефон","Почта"])
     let custTextField = CustTextField()
-    let custButton = CustomButton(frame: CGRect(), title: "")
+    let custButtonView1 = CustomButton(frame: CGRect(), title: "")
+    let custButtonView2 = CustomButton(frame: CGRect(), title: "")
     let custlabel2 = CustomLabel()
     let screenWidth = UIScreen.main.bounds.width-10
     
@@ -27,9 +28,11 @@ class CreateAccountViewController: UIViewController {
         
         setupUI()
         custlabel.setupLabel(title: "Войти или создать аккаунт", size: 32, alignment: .center )
-        let model = CustButtonModel(title: "Получить код") {self.buttonPressed()}
-        custButton.setupButton(custButtonModel: model)
         custTextField.setupTextField(size: 20, aligment: .center)
+        let model = CustButtonModel(title: "Экран 1") {self.buttonPressed()}
+        custButtonView1.setupButton(custButtonModel: model)
+        let modelTwo = CustButtonModel(title: "Экран 2") {self.buttonPressed1()}
+        custButtonView2.setupButton(custButtonModel: modelTwo)
         custlabel2.setupLabel(title: "Нажимая кнопку \"Получить код\", Вы соглашаетесь с условиями политики конфиденциальности", size: 12, alignment: .left)
     }
 
@@ -49,7 +52,9 @@ class CreateAccountViewController: UIViewController {
         stackView.addArrangedSubview(custlabel)
         stackView.addArrangedSubview(segment)
         stackView.addArrangedSubview(custTextField)
-        stackView.addArrangedSubview(custButton)
+        stackView.addArrangedSubview(custButtonView1)
+        stackView.addArrangedSubview(custButtonView2)
+
         stackView.addArrangedSubview(custlabel2)
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +68,8 @@ class CreateAccountViewController: UIViewController {
             custlabel.widthAnchor.constraint(equalToConstant: screenWidth),
             segment.widthAnchor.constraint(equalToConstant: screenWidth),
             custTextField.widthAnchor.constraint(equalToConstant: screenWidth),
-            custButton.widthAnchor.constraint(equalToConstant: screenWidth),
+            custButtonView1.widthAnchor.constraint(equalToConstant: screenWidth),
+            custButtonView2.widthAnchor.constraint(equalToConstant: screenWidth),
             custlabel2.widthAnchor.constraint(equalToConstant: screenWidth)
         ])
         
@@ -82,6 +88,11 @@ class CreateAccountViewController: UIViewController {
         let text = custTextField.text ?? ""
         UserDefaults.standard.set(text, forKey: Constants.savedTextFieldTextKey)
         let viewcontroller = LoginViewController()
+        viewcontroller.view.backgroundColor = .white
+        self.navigationController?.pushViewController(viewcontroller, animated: true)
+    }
+    func buttonPressed1() {
+        let viewcontroller = NewController()
         viewcontroller.view.backgroundColor = .white
         self.navigationController?.pushViewController(viewcontroller, animated: true)
     }

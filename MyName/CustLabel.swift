@@ -8,12 +8,14 @@ import UIKit
 
 struct CustModelLabel {
     var title: String
+    
 }
 
 class CustomLabel: UILabel{
     
     func setupLabel(model: CustModelLabel) {
         text = model.title
+        
         setup()
     }
     

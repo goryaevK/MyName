@@ -26,8 +26,8 @@ class NewController: UIViewController {
         custLabel2.setupLabel(model: model1)
         custLabel3.setupLabel(title: "Stop", size: 30, alignment: .center)
         custLabel4.setupLabel(title: "Метка 4", size: 5, alignment: .left)
-        custLabel5.setupLabel(title: "Метка 5", size: 50, alignment: .right)
-        custLabel6.setupLabel(title: "Метка 6", size: 10, alignment: .center)
+        custLabel5.setupLabel(title: "Метка 5", size: 80, alignment: .center)
+        custLabel6.setupLabel(title: "Метка 6", size: 10, alignment: .right)
     }
     func setupUI(){
         stackView.axis = .vertical

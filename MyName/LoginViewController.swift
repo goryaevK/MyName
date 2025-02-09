@@ -9,14 +9,14 @@ import UIKit
 
 class LoginViewController: UIViewController {
     private enum Constants {
-    static let savedTextFieldTextKey = "savedTextFieldText"
+        static let savedTextFieldTextKey = "savedTextFieldText"
     }
     
     let stackView = UIStackView()
-    let label = UILabel()
-    let uitextfield = UITextField()
-    let button = UIButton(type: .system)
-    let label2 = UILabel()
+    let custlabel = CustomLabel()
+    let custTextField = CustTextField()
+    let custButton = CustomButton(frame: CGRect(), title: "")
+    let custlabel2 = CustomLabel()
     let screenWidth = UIScreen.main.bounds.width-10
     
     
@@ -25,12 +25,17 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        custlabel.setupLabel(title: "Войдите с паролем", size: 32, alignment: .center )
+        custTextField.setupTextField(size: 20, aligment: .left)
         if let savedText = UserDefaults.standard.string(forKey: Constants.savedTextFieldTextKey) {
-            uitextfield.text = savedText
+            custTextField.text = savedText
             print("Извлеченный текст: \(savedText)")
         } else {
-            uitextfield.text = "Нет сохраненного текста"
+            custTextField.text = "Нет сохраненного текста"
         }
+        let model = CustButtonModel(title: "Войти") {self.buttonPressed()}
+        custButton.setupButton(custButtonModel: model)
+        custlabel2.setupLabel(title: "Забыли пароль?", size: 14, alignment: .right )
     }
     
     func setupUI() {
@@ -41,16 +46,12 @@ class LoginViewController: UIViewController {
         stackView.spacing = 30
         
         //Настройка параметров метки
-        setupLabel()
-        setupTextField()
-        setupButton()
-        setupLabel2()
+        //setupButton()
       
-        stackView.addArrangedSubview(label)
-        
-        stackView.addArrangedSubview(uitextfield)
-        stackView.addArrangedSubview(button)
-        stackView.addArrangedSubview(label2)
+        stackView.addArrangedSubview(custlabel)
+        stackView.addArrangedSubview(custTextField)
+        stackView.addArrangedSubview(custButton)
+        stackView.addArrangedSubview(custlabel2)
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -60,65 +61,16 @@ class LoginViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             stackView.widthAnchor.constraint(equalToConstant: screenWidth),
-            button.widthAnchor.constraint(equalToConstant: screenWidth),
-            uitextfield.widthAnchor.constraint(equalToConstant: screenWidth),
-            label.widthAnchor.constraint(equalToConstant: screenWidth),
-            label2.widthAnchor.constraint(equalToConstant: screenWidth)
-        
-        
+            custlabel.widthAnchor.constraint(equalToConstant: screenWidth),
+            custTextField.widthAnchor.constraint(equalToConstant: screenWidth),
+            custButton.widthAnchor.constraint(equalToConstant: screenWidth),
+            custlabel2.widthAnchor.constraint(equalToConstant: screenWidth)
         ])
         
-        
-    }
-    func setupLabel() {
-        label.text = "Войдите с паролем"
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 32)
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.1
-        label.frame = CGRect(x: 20, y: 100, width: 50, height: 100)
     }
 
-    func setupTextField() {
-        
-        uitextfield.font = UIFont.systemFont(ofSize: 14)
-        uitextfield.textColor = .black
-        uitextfield.textAlignment = .center
-        uitextfield.borderStyle = .roundedRect
-        uitextfield.clearButtonMode = .whileEditing
-        uitextfield.keyboardType = .default
-        uitextfield.layer.borderWidth = 0.8
-        uitextfield.layer.borderColor = UIColor.black.cgColor
-        uitextfield.layer.cornerRadius = 5
-        uitextfield.isSecureTextEntry = false
-        
-    }
     
-    func setupButton() {
-        button.setTitle("Войти", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .red
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-    }
-    
-    func setupLabel2() {
-        label2.text = "Забыли пароль?"
-        label2.textColor = .black
-        label2.font = UIFont.systemFont(ofSize: 16)
-        label2.textAlignment = .right
-        label2.numberOfLines = 2
-        label2.lineBreakMode = .byWordWrapping
-        label2.adjustsFontSizeToFitWidth = true
-        label2.minimumScaleFactor = 1
-    }
-    
-    
-    @objc func buttonPressed() {
+    func buttonPressed() {
         
     }
 

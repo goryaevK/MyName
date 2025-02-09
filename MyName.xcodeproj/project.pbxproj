@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0896424F2D57BC1100F61201 /* CustButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0896424E2D57BBEC00F61201 /* CustButton.swift */; };
+		089642532D57CAD600F61201 /* CustLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089642522D57CACB00F61201 /* CustLabel.swift */; };
+		089642572D57CE6A00F61201 /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089642562D57CE5200F61201 /* NewController.swift */; };
+		08A33B2C2D585D890093A307 /* CustTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A33B2B2D585D710093A307 /* CustTextField.swift */; };
 		08A38A1B2D55416E000EF4AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A112D55416E000EF4AC /* AppDelegate.swift */; };
 		08A38A1C2D55416E000EF4AC /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A132D55416E000EF4AC /* CreateAccountViewController.swift */; };
 		08A38A1D2D55416E000EF4AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A172D55416E000EF4AC /* LoginViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0896424E2D57BBEC00F61201 /* CustButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustButton.swift; sourceTree = "<group>"; };
+		089642522D57CACB00F61201 /* CustLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustLabel.swift; sourceTree = "<group>"; };
+		089642562D57CE5200F61201 /* NewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
+		08A33B2B2D585D710093A307 /* CustTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustTextField.swift; sourceTree = "<group>"; };
 		08A38A112D55416E000EF4AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08A38A122D55416E000EF4AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08A38A132D55416E000EF4AC /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -42,9 +50,13 @@
 		08A38A1A2D55416E000EF4AC /* MyName */ = {
 			isa = PBXGroup;
 			children = (
+				089642522D57CACB00F61201 /* CustLabel.swift */,
+				0896424E2D57BBEC00F61201 /* CustButton.swift */,
+				08A33B2B2D585D710093A307 /* CustTextField.swift */,
 				08A38A112D55416E000EF4AC /* AppDelegate.swift */,
 				08A38A122D55416E000EF4AC /* Assets.xcassets */,
 				08A38A132D55416E000EF4AC /* CreateAccountViewController.swift */,
+				089642562D57CE5200F61201 /* NewController.swift */,
 				08A38A142D55416E000EF4AC /* Info.plist */,
 				08A38A162D55416E000EF4AC /* LaunchScreen.storyboard */,
 				08A38A172D55416E000EF4AC /* LoginViewController.swift */,
@@ -143,8 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				089642532D57CAD600F61201 /* CustLabel.swift in Sources */,
 				08A38A1B2D55416E000EF4AC /* AppDelegate.swift in Sources */,
 				08A38A1C2D55416E000EF4AC /* CreateAccountViewController.swift in Sources */,
+				0896424F2D57BC1100F61201 /* CustButton.swift in Sources */,
+				08A33B2C2D585D890093A307 /* CustTextField.swift in Sources */,
+				089642572D57CE6A00F61201 /* NewController.swift in Sources */,
 				08A38A1D2D55416E000EF4AC /* LoginViewController.swift in Sources */,
 				08A38A1E2D55416E000EF4AC /* SceneDelegate.swift in Sources */,
 				08A38A1F2D55416E000EF4AC /* UserPhoneModel.swift in Sources */,

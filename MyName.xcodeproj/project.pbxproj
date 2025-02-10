@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0877FDFC2D5A6F0C003E3772 /* CustLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877FDFB2D5A6EF9003E3772 /* CustLabelModel.swift */; };
+		0877FE012D5A6FD6003E3772 /* CustButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877FE002D5A6FC7003E3772 /* CustButtonModel.swift */; };
+		0877FE032D5A709A003E3772 /* CustTextFieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0877FE022D5A708A003E3772 /* CustTextFieldModel.swift */; };
 		0896424F2D57BC1100F61201 /* CustButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0896424E2D57BBEC00F61201 /* CustButton.swift */; };
 		089642532D57CAD600F61201 /* CustLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089642522D57CACB00F61201 /* CustLabel.swift */; };
-		089642572D57CE6A00F61201 /* NewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089642562D57CE5200F61201 /* NewController.swift */; };
+		089642572D57CE6A00F61201 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089642562D57CE5200F61201 /* PasswordViewController.swift */; };
 		08A33B2C2D585D890093A307 /* CustTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A33B2B2D585D710093A307 /* CustTextField.swift */; };
 		08A38A1B2D55416E000EF4AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A112D55416E000EF4AC /* AppDelegate.swift */; };
 		08A38A1C2D55416E000EF4AC /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A38A132D55416E000EF4AC /* CreateAccountViewController.swift */; };
@@ -21,9 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0877FDFB2D5A6EF9003E3772 /* CustLabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustLabelModel.swift; sourceTree = "<group>"; };
+		0877FE002D5A6FC7003E3772 /* CustButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustButtonModel.swift; sourceTree = "<group>"; };
+		0877FE022D5A708A003E3772 /* CustTextFieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustTextFieldModel.swift; sourceTree = "<group>"; };
 		0896424E2D57BBEC00F61201 /* CustButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustButton.swift; sourceTree = "<group>"; };
 		089642522D57CACB00F61201 /* CustLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustLabel.swift; sourceTree = "<group>"; };
-		089642562D57CE5200F61201 /* NewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewController.swift; sourceTree = "<group>"; };
+		089642562D57CE5200F61201 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		08A33B2B2D585D710093A307 /* CustTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustTextField.swift; sourceTree = "<group>"; };
 		08A38A112D55416E000EF4AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08A38A122D55416E000EF4AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,16 +53,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0877FDF92D5A6B38003E3772 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				0877FDFF2D5A6F9B003E3772 /* CustTextField */,
+				0877FDFE2D5A6F84003E3772 /* CustButton */,
+				0877FDFD2D5A6F65003E3772 /* CustLabel */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		0877FDFD2D5A6F65003E3772 /* CustLabel */ = {
+			isa = PBXGroup;
+			children = (
+				0877FDFB2D5A6EF9003E3772 /* CustLabelModel.swift */,
+				089642522D57CACB00F61201 /* CustLabel.swift */,
+			);
+			path = CustLabel;
+			sourceTree = "<group>";
+		};
+		0877FDFE2D5A6F84003E3772 /* CustButton */ = {
+			isa = PBXGroup;
+			children = (
+				0896424E2D57BBEC00F61201 /* CustButton.swift */,
+				0877FE002D5A6FC7003E3772 /* CustButtonModel.swift */,
+			);
+			path = CustButton;
+			sourceTree = "<group>";
+		};
+		0877FDFF2D5A6F9B003E3772 /* CustTextField */ = {
+			isa = PBXGroup;
+			children = (
+				0877FE022D5A708A003E3772 /* CustTextFieldModel.swift */,
+				08A33B2B2D585D710093A307 /* CustTextField.swift */,
+			);
+			path = CustTextField;
+			sourceTree = "<group>";
+		};
 		08A38A1A2D55416E000EF4AC /* MyName */ = {
 			isa = PBXGroup;
 			children = (
-				089642522D57CACB00F61201 /* CustLabel.swift */,
-				0896424E2D57BBEC00F61201 /* CustButton.swift */,
-				08A33B2B2D585D710093A307 /* CustTextField.swift */,
+				0877FDF92D5A6B38003E3772 /* Design */,
 				08A38A112D55416E000EF4AC /* AppDelegate.swift */,
 				08A38A122D55416E000EF4AC /* Assets.xcassets */,
 				08A38A132D55416E000EF4AC /* CreateAccountViewController.swift */,
-				089642562D57CE5200F61201 /* NewController.swift */,
+				089642562D57CE5200F61201 /* PasswordViewController.swift */,
 				08A38A142D55416E000EF4AC /* Info.plist */,
 				08A38A162D55416E000EF4AC /* LaunchScreen.storyboard */,
 				08A38A172D55416E000EF4AC /* LoginViewController.swift */,
@@ -157,11 +198,14 @@
 			files = (
 				089642532D57CAD600F61201 /* CustLabel.swift in Sources */,
 				08A38A1B2D55416E000EF4AC /* AppDelegate.swift in Sources */,
+				0877FE012D5A6FD6003E3772 /* CustButtonModel.swift in Sources */,
 				08A38A1C2D55416E000EF4AC /* CreateAccountViewController.swift in Sources */,
 				0896424F2D57BC1100F61201 /* CustButton.swift in Sources */,
 				08A33B2C2D585D890093A307 /* CustTextField.swift in Sources */,
-				089642572D57CE6A00F61201 /* NewController.swift in Sources */,
+				089642572D57CE6A00F61201 /* PasswordViewController.swift in Sources */,
 				08A38A1D2D55416E000EF4AC /* LoginViewController.swift in Sources */,
+				0877FE032D5A709A003E3772 /* CustTextFieldModel.swift in Sources */,
+				0877FDFC2D5A6F0C003E3772 /* CustLabelModel.swift in Sources */,
 				08A38A1E2D55416E000EF4AC /* SceneDelegate.swift in Sources */,
 				08A38A1F2D55416E000EF4AC /* UserPhoneModel.swift in Sources */,
 			);

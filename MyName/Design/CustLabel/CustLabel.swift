@@ -6,16 +6,12 @@
 //
 import UIKit
 
-struct CustModelLabel {
-    var title: String
-    
-}
-
 class CustomLabel: UILabel{
     
-    func setupLabel(model: CustModelLabel) {
+    func setupLabel(model: CustLabelModel) {
         text = model.title
-        
+        font = UIFont.systemFont(ofSize: CGFloat(model.size))
+        textAlignment = model.alignment
         setup()
     }
     

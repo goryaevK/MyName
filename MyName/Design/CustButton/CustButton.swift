@@ -6,11 +6,6 @@
 //
 import UIKit
 
-struct CustButtonModel {
-    var title: String
-    var action: () -> Void
-}
-
 class CustomButton: UIButton {
     private var custButtonModel: CustButtonModel?
     // Кастомный инициализатор
@@ -25,8 +20,6 @@ class CustomButton: UIButton {
     }
     
     // Настройка кнопки
-    
-    
     func setupButton(custButtonModel: CustButtonModel) {
         self.custButtonModel = custButtonModel
         

@@ -9,30 +9,33 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
     private enum Constants {
-    static let savedTextFieldTextKey = "savedTextFieldText"
+        static let savedTextFieldTextKey = "savedTextFieldText"
     }
     
     let stackView = UIStackView()
-    let label = UILabel()
+    let custlabel = CustomLabel()
     let segment = UISegmentedControl(items: ["Телефон","Почта"])
-    let uitextfield = UITextField()
-    let button = UIButton(type: .system)
-    let label2 = UILabel()
+    let custTextField = CustTextField()
+    let custButtonView1 = CustomButton(frame: CGRect(), title: "")
+    let custButtonView2 = CustomButton(frame: CGRect(), title: "")
+    let custlabel2 = CustomLabel()
     let screenWidth = UIScreen.main.bounds.width-10
     
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         view.backgroundColor = .white
         
         setupUI()
-        
-
+        custlabel.setupLabel(title: "Войти или создать аккаунт", size: 32, alignment: .center )
+        custTextField.setupTextField(size: 20, aligment: .center, color: .black)
+        let model = CustButtonModel(title: "Экран 1") {self.buttonPressed()}
+        custButtonView1.setupButton(custButtonModel: model)
+        let modelTwo = CustButtonModel(title: "Экран 2") {self.buttonPressed1()}
+        custButtonView2.setupButton(custButtonModel: modelTwo)
+        custlabel2.setupLabel(title: "Нажимая кнопку \"Получить код\", Вы соглашаетесь с условиями политики конфиденциальности", size: 12, alignment: .left)
     }
-   
-        
-        
+
     func setupUI() {
         //настройка UIStackView
         stackView.axis = .vertical
@@ -41,101 +44,57 @@ class CreateAccountViewController: UIViewController {
         stackView.spacing = 30
         
         //Настройка параметров метки
-        setupLabel()
+        
         setupSegment()
-        setupTextField()
-        setupButton()
-        setupLabel2()
+    
+        
       
-        stackView.addArrangedSubview(label)
+        stackView.addArrangedSubview(custlabel)
         stackView.addArrangedSubview(segment)
-        stackView.addArrangedSubview(uitextfield)
-        stackView.addArrangedSubview(button)
-        stackView.addArrangedSubview(label2)
+        stackView.addArrangedSubview(custTextField)
+        stackView.addArrangedSubview(custButtonView1)
+        stackView.addArrangedSubview(custButtonView2)
+
+        stackView.addArrangedSubview(custlabel2)
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         // Устанавливаем ограничения
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             stackView.widthAnchor.constraint(equalToConstant: screenWidth),
-            button.widthAnchor.constraint(equalToConstant: screenWidth),
-            uitextfield.widthAnchor.constraint(equalToConstant: screenWidth),
+            custlabel.widthAnchor.constraint(equalToConstant: screenWidth),
             segment.widthAnchor.constraint(equalToConstant: screenWidth),
-            label.widthAnchor.constraint(equalToConstant: screenWidth),
-            label2.widthAnchor.constraint(equalToConstant: screenWidth)
-        
-        
+            custTextField.widthAnchor.constraint(equalToConstant: screenWidth),
+            custButtonView1.widthAnchor.constraint(equalToConstant: screenWidth),
+            custButtonView2.widthAnchor.constraint(equalToConstant: screenWidth),
+            custlabel2.widthAnchor.constraint(equalToConstant: screenWidth)
         ])
         
         
     }
-    func setupLabel() {
-        label.text = "Войти или создать аккаунт"
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 32)
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.1
-        label.frame = CGRect(x: 20, y: 100, width: 50, height: 100)
-    }
+    
     func setupSegment() {
         segment.selectedSegmentIndex = 0
         segment.tintColor = .blue
         segment.backgroundColor = .lightGray
         segment.apportionsSegmentWidthsByContent = true
     }
-    func setupTextField() {
-        uitextfield.text = " "
-        uitextfield.placeholder = "+7(999)999-99-99"
-        uitextfield.font = UIFont.systemFont(ofSize: 14)
-        uitextfield.textColor = .black
-        uitextfield.textAlignment = .center
-        uitextfield.borderStyle = .roundedRect
-        uitextfield.clearButtonMode = .whileEditing
-        uitextfield.keyboardType = .default
-        uitextfield.layer.borderWidth = 0.8
-        uitextfield.layer.borderColor = UIColor.black.cgColor
-        uitextfield.layer.cornerRadius = 5
-        uitextfield.isSecureTextEntry = false
-        
-    }
-    
-    func setupButton() {
-        button.setTitle("Получить код", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .red
-        button.layer.cornerRadius = 5
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-    }
-    
-    func setupLabel2() {
-        label2.text = "Нажимая кнопку \"Получить код\", Вы соглашаетесь с условиями политики конфиденциальности"
-        label2.textColor = .black
-        label2.font = UIFont.systemFont(ofSize: 11)
-        label2.textAlignment = .left
-        label2.numberOfLines = 2
-        label2.lineBreakMode = .byWordWrapping
-        label2.adjustsFontSizeToFitWidth = true
-        label2.minimumScaleFactor = 1
-    }
     
     
-    @objc func buttonPressed() {
-        let text = uitextfield.text ?? ""
+    func buttonPressed() {
+        let text = custTextField.text ?? ""
         UserDefaults.standard.set(text, forKey: Constants.savedTextFieldTextKey)
         let viewcontroller = LoginViewController()
         viewcontroller.view.backgroundColor = .white
         self.navigationController?.pushViewController(viewcontroller, animated: true)
-        
-        
     }
-
- 
-
+    func buttonPressed1() {
+        let viewcontroller = PasswordViewController()
+        viewcontroller.view.backgroundColor = .white
+        self.navigationController?.pushViewController(viewcontroller, animated: true)
+    }
 }
 

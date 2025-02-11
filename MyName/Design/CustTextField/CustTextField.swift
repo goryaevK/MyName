@@ -6,13 +6,17 @@
 //
 import UIKit
 
+
+
 class CustTextField: UITextField {
-    func setupTextField(size: Int, aligment: NSTextAlignment) {
+    func setupTextField(size: Int, aligment: NSTextAlignment, color: UIColor) {
         font = UIFont.systemFont(ofSize: CGFloat(size))
         textAlignment = aligment
+        layer.borderColor = color.cgColor
         setup()
     }
-    
+
+        
     private func setup() {
         text = " "
         placeholder = "+7(999)999-99-99"
@@ -21,9 +25,8 @@ class CustTextField: UITextField {
         clearButtonMode = .whileEditing
         keyboardType = .default
         layer.borderWidth = 0.8
-        layer.borderColor = UIColor.black.cgColor
+        //layer.borderColor = UIColor.black.cgColor
         layer.cornerRadius = 5
         isSecureTextEntry = false
-        
     }
 }

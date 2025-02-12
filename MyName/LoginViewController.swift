@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         
         setupUI()
         custlabel.setupLabel(title: "Войдите с паролем", size: 32, alignment: .center )
-        custTextField.setupTextField(size: 20, aligment: .left, color: .black)
+        custTextField.setupTextField(size: 20, alignment: .left, color: .black)
         if let savedText = UserDefaults.standard.string(forKey: Constants.savedTextFieldTextKey) {
             custTextField.text = savedText
             print("Извлеченный текст: \(savedText)")

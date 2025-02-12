@@ -25,10 +25,10 @@ class PasswordViewController: UIViewController {
         custLabel1.setupLabel(model: model)
         let model1 = CustLabelModel(title: "Пароль", size: 15, alignment: .left)
         custLabel2.setupLabel(model: model1)
-        custTextFieldPassword.setupTextField(size: 20, aligment: .center, color: .black)
+        custTextFieldPassword.setupTextField(size: 20, alignment: .center, color: .black)
         let model2 = CustLabelModel(title: "Повторите пароль", size: 15, alignment: .left)
         custLabel3.setupLabel(model: model2)
-        custTextFieldPasswordRepeat.setupTextField(size: 20, aligment: .center, color: .black)
+        custTextFieldPasswordRepeat.setupTextField(size: 20, alignment: .center, color: .black)
         let modelButton = CustButtonModel(title: "Зарегистрироваться") {self.checkPassword()}
         custButtonReg.setupButton(custButtonModel: modelButton)
     }
@@ -65,24 +65,14 @@ class PasswordViewController: UIViewController {
     }
     
     func checkPassword() {
-        //Проверка password (protocol ValidatorPassword)
+        let passwordValidator = PasswordValidator()
         guard let password = custTextFieldPassword.text else { return }
-        let trimmedText = password.trimmingCharacters(in: .whitespacesAndNewlines)
-        let characterCount = trimmedText.count
-        print("Количество символов: \(characterCount)")
-        let regex = ".*[а-яА-Я]+.*"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-
-        if (characterCount <= 8) || (predicate.evaluate(with: trimmedText)) {
+        if  passwordValidator.check(text: password) {
             print("Error password")
-        //Ввести в класс text field ???????
-            
-            
-            custTextFieldPassword.setupTextField(size: 20, aligment: .center, color: .red)
+            custTextFieldPassword.colorBorder(color: .red)
         } else {
             print("Password Ok")
-        //Ввести в класс text field ???????
-            custTextFieldPassword.setupTextField(size: 20, aligment: .center, color: .black)
+            custTextFieldPassword.colorBorder(color: .black)
         }
 
     }

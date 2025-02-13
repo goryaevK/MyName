@@ -25,8 +25,6 @@ class CustTextField: UITextField {
     }
         
     private func setup() {
-        text = " "
-        placeholder = "+7(999)999-99-99"
         textColor = .black
         borderStyle = .roundedRect
         clearButtonMode = .whileEditing

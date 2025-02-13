@@ -65,8 +65,8 @@ class PasswordViewController: UIViewController {
     }
     
     func checkPassword() {
-        let passwordValidator = PasswordValidator()
         guard let password = custTextFieldPassword.text else { return }
+        let passwordValidator = PasswordValidator()
         if  passwordValidator.check(text: password) {
             print("Error password")
             custTextFieldPassword.colorBorder(color: .red)

@@ -18,7 +18,7 @@ class PasswordValidator: Validator {
         let regex = ".*[а-яА-Я]+.*"
         let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
         return (characterCount <= 8) || (predicate.evaluate(with: trimmedText))
-//        return true
+
     }
 }
 

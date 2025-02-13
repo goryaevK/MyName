@@ -28,7 +28,7 @@ class CreateAccountViewController: UIViewController {
         
         setupUI()
         custlabel.setupLabel(title: "Войти или создать аккаунт", size: 32, alignment: .center )
-        custTextField.setupTextField(size: 20, aligment: .center, color: .black)
+        custTextField.setupTextField(size: 20, alignment: .center, color: .black)
         let model = CustButtonModel(title: "Экран 1") {self.buttonPressed()}
         custButtonView1.setupButton(custButtonModel: model)
         let modelTwo = CustButtonModel(title: "Экран 2") {self.buttonPressed1()}
